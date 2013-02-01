@@ -27,8 +27,8 @@
 
 ### BEGIN INIT INFO
 # Provides:          galah-sisyphus
-# Required-Start:    $remote_fs $syslog $networking $mongod
-# Required-Stop:     $remote_fs $syslog $networking $mongod
+# Required-Start:    remote_fs syslog networking mongod
+# Required-Stop:     remote_fs syslog networking mongod
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
 # Short-Description: Daemon for galah-sisyphus.
