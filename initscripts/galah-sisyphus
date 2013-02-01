@@ -31,7 +31,7 @@
 # Required-Stop:     $remote_fs $syslog $networking $mongod
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: Daemon for the galah-sisyphus.
+# Short-Description: Daemon for galah-sisyphus.
 # Description:       Controls Galah's sisyphus component.
 ### END INIT INFO
 
@@ -44,7 +44,7 @@ ME_FULL=$DIR/$ME
 # The user that sisyphus will be ran under
 SISYPHUS_USER="www-data"
 
-# The location of the uwsgi process to use
+# The location of the sisyphus executable
 SISYPHUS_PATH="/home/www-data/galah/galah/sisyphus/sisyphus.py"
 
 # The location of the python interpretor to use (should be the interpreter
