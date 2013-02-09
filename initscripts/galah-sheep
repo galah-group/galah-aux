@@ -122,22 +122,17 @@ status)
 stop)
         echo -n "Stopping $NAME: ["
 
-	# Allow user to specify amount of seconds to wait.
-	if [ -n "$2" ]; then
-	        SHUTDOWN_WAIT=$2;
-	fi
-
         if [ -f $PIDFILE ]; then
                 PID=`cat $PIDFILE`
                 KILL_OUTPUT=$(kill -TERM $PID 2>&1)
                 if [[ $? == "0" ]]; then
-		        # Wait for sheep gracefully shut down.
-		        waitCount=0;
-		        until [ `ps --pid $PID | grep -c $PID` = '0' ] || [ $waitCount -gt $SHUTDOWN_WAIT ]
-			do
+                        # Wait for sheep gracefully shut down.
+                        waitCount=0;
+                        until [ `ps --pid $PID | grep -c $PID` = '0' ] || [ $waitCount -gt $SHUTDOWN_WAIT ]
+                        do
                                 sleep 1
-				let waitCount=$waitCount+1;
-			done
+                                let waitCount=$waitCount+1;
+                        done
 
                         $ME_FULL status > /dev/null 2>&1 == "3"
                         if [[ $? == "3" || $? == "1" ]]; then
