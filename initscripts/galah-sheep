@@ -45,7 +45,7 @@ ME=`basename $0`
 ME_FULL=$DIR/$ME
 
 # The user that sheep will be ran under
-SHEEP_USER="www-data"
+SHEEP_USER="root"
 
 # The location of the sheep executable to use
 SHEEP_PATH="/home/www-data/galah/galah/sheep/sheep.py"
